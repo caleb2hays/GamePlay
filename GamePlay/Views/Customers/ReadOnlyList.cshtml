@@ -1,0 +1,46 @@
+﻿@model IEnumerable<GamePlay.Models.CustomerModel>
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Customers</h2>
+
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Membership Type</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+@section scripts
+{
+<script>
+    $(document).ready(function () {
+        var table = $("#customers").DataTable({
+            //This works for small amounts of records on the clientside, but for larger amounts, it would be better to do this process
+            //on the server.
+            ajax: {
+                url: "/api/customers",
+                dataSrc: ""
+            },
+            columns: [
+                {
+                    data: "name",
+                    render: function (data, type, customer) {
+                        return "<a href='/customers/details/" + customer.id + "'>" + customer.name + "</a>";
+                    }
+                },
+                {
+                    data: "membershipType.typeName"
+                },
+                
+            ]
+        });
+    });
+</script>
+}

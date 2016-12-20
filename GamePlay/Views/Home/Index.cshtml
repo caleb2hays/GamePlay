@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    @if (@User.Identity.IsAuthenticated)
+    {
+    <h1>Hello @User.Identity.Name!</h1>
+    <p class="lead">Welcome to GamePlay.</p>
+    }
+    else
+    {
+    <h1>Welcome to GamePlay!</h1>
+    <h3>Please Register or Log In to Continue!</h3>
+    }
+    
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Useless Button</h2>
+        <p>
+            This button doesn't really do anything.  It's just here to take up space.
+        </p>
+        <p><a class="btn btn-default" href="#">Worthless Button &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Go to a REAL Game Rental Site!</h2>
+        <p>This is a website for renting games, similar to Netflix. This is where I got the idea for GamePlay!</p>
+        <p><a class="btn btn-default" href="http://gamefly.com/" target="_blank">Beam Me Up Scotty! &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Need To Find Useful Information?</h2>
+        <p>Check out Google! There is all kinds of information about anything you want! Including better looking applications!</p>
+        <p><a class="btn btn-default" href="http://google.com" target="_blank">Activate Portal &raquo;</a></p>
+    </div>
+</div>

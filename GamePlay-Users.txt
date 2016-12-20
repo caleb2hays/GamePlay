@@ -1,0 +1,7 @@
+Admin
+User: admin@gameplay.com
+Pass: Password@123
+
+Guest
+User: user@gameplay.com
+Pass: Password@123
